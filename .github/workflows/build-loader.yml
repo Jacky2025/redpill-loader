@@ -68,18 +68,18 @@ jobs:
         echo '  "extra_cmdline": {' >> user_config.json
         echo '    "vid": "0x46f4",' >> user_config.json
         echo '    "pid": "0x0001",' >> user_config.json
-        echo '    "sn": "D3ZZZZZZZZZZZ",' >> user_config.json
-        echo '    "mac1": "021132aabbcc"' >> user_config.json
+        echo '    "sn": "D33456ZZZZZZZ",' >> user_config.json
+        echo '    "mac1": "021132aa23cc"' >> user_config.json
         echo '  }' >> user_config.json
         echo '}' >> user_config.json
 
         echo 'step 4'
-        sudo ./build-loader.sh 'DS918+' '7.0.1-42218'
+        sudo ./build-loader.sh 'DS3615xs' '7.0.1-42214'
         ls -l images
-        mv images/redpill-DS918+*.img images/redpill-DS918+.img
+        mv images/redpill-DS3615xs*.img images/redpill-DS3615xs.img
 
     - name: Upload firmware directory
       uses: actions/upload-artifact@master
       with:
         name: Loader_firmware
-        path: /workdir/redpill-load/images/redpill-DS918+.img
+        path: /workdir/redpill-load/images/redpill-DS3615xs.img
